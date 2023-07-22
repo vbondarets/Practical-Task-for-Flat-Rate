@@ -2,7 +2,7 @@ import { Application } from 'express';
 import ticketsRouter from './api/tickets.route.js';
 
 
-class AppRouter {
+export class AppRouter {
   constructor(private app: Application) {}
 
   init() {
@@ -13,4 +13,4 @@ class AppRouter {
   }
 }
 
-export default AppRouter;
+//export default AppRouter;

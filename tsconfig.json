@@ -13,10 +13,14 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    // "moduleResolution": "node"
+    // "allowImportingTsExtensions": true,
+    // "emitDeclarationOnly" :true,
+    // "declaration":true,
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "__tests__", "jest.config.js"],
   "lib": ["esnext"],
   "ts-node": {
     "esm": true

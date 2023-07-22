@@ -4,10 +4,9 @@ import LAPhil from '../utils/API/LAPhil.js';
 import { IPrice } from '../types/pricing.type.js';
 import { ISeat } from '../types/seat.type.js';
 import { IZone } from '../types/zone.type.js';
-import { IAvailableSeat } from '../types/availableSeat.type.js';
 import _ from 'lodash'
 
-export default class TicketsService {
+export class TicketsService {
   async getAvailable(id: string, next?: NextFunction) {
     const event = await LAPhil.getEvent(id);
     if (event.length === 0 && next) {

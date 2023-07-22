@@ -1,6 +1,6 @@
 export interface IZone {
     PerformanceId ?: number
     Id ?: number;
-    Description ?: String;
+    Description ?: string;
     Zones?: any;
 }

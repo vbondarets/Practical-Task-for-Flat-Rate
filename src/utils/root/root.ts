@@ -1,4 +1,4 @@
-import TicketsService from "../../services/tickets.service.js";
+import {TicketsService} from "../../services/tickets.service.js";
 import { IID } from "../../types/id.type.js";
 
 
