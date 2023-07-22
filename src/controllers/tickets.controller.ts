@@ -9,8 +9,8 @@ export class TicketsController {
 
   async getAvailable(req: Request, res: Response, next : NextFunction) {
     const { id }: IID = req.params;
-    if(!id){
-      // throw next(ApiError.conflict("There is no ID"))
+    if(!id || !parseInt(id) ){
+      throw next(ApiError.conflict("There is no ID or the ID is incorrect"))
     }
     const tickets = await this.TicketsService.getAvailable(id, next);
     if(tickets.length === 0){

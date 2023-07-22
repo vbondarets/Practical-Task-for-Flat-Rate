@@ -9,8 +9,8 @@ export const wrapper = (controllerMethod: ControllerMethod) =>
             await controllerMethod(req, res, next);
         } catch (err: any) {
             if(err){
-                // console.log(err)
-                // return next(ApiError.internal(err.message));
+                console.log(err.message)
+                return next(ApiError.internal(err));
             }
         }
     };

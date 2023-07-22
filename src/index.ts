@@ -31,7 +31,6 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 router.init();
-// app.use('/api', router)
 app.use(errorHandler);
 
 const start = async () : Promise<void> => {
