@@ -5,6 +5,10 @@ import 'dotenv/config';
 import bodyParser from 'body-parser';
 import AppRouter from './routes/index.js';
 import errorHandler from './middleware/ErrorHandler.js';
+import {graphqlHTTP} from 'express-graphql'
+import { graphql } from 'graphql';
+import { schema } from './schemas/schema.js';
+import { root } from './utils/root/root.js';
 
 dotenv.config()
 
@@ -14,6 +18,11 @@ const HOST = process.env.HOST ? process.env.HOST : 'localhost';
 const app = express();
 const router = new AppRouter(app);
 
+app.use('/graphql', graphqlHTTP({
+    graphiql: true,
+    schema: schema,
+    rootValue: root
+}))
 app.use(cors({
     origin: ["https://ticket-list",HOST],
     methods: ["GET", "POST", "PATCH", 'DELETE'],
