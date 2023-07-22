@@ -5,7 +5,7 @@ import {wrapper} from '../../middleware/ctrlWrapper.js'
 const ticketsRouter: Router = Router();
 
 ticketsRouter.get(
-  '/',
+  '/:id',
   wrapper(ticketsController.getAvailable.bind(ticketsController)),
 );
 
